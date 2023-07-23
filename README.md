@@ -2,7 +2,7 @@
 An easy and useful cookie based authentication library for golang fiber framework. It uses JWT tokens to start a session. You can set the lifetime of token.
 Let's start with example: 
 
-Login :
+<h2>Login :</h2>
 
 ```go
 //Make your login controlls here. Control if e-mail and password is correct.
@@ -16,7 +16,7 @@ err := session.Set(c, user.ID, secretKey)
 Now our user is logged in. Only you should do is taking auth cookie in every request and controll if it is valid. Our library will do this for you. 
 
 
-Checking user validation :
+<h2>Checking user validation :</h2>
 ```go
 session := session.New()
 issuerString, err := session.Get(c, secretKey)
@@ -27,7 +27,7 @@ if err != nil {
 //The issuer string is id of the user that client claims to be. So, you can consider this is the user with that id, and do your staff. 
 ```
 
-Logout :
+<h2>Logout :</h2>
 
 logging out is also so easy. 
 ```go
@@ -36,17 +36,17 @@ s.Delete(c)
 //The auth cookie will be deleted authomaticly.
 ```
 
-Using flash messages : 
+<h2>Using flash messages : </h2>
 Flash messages are used for transfering message from a page to another page. We basicly write our message inside a cookie named flashmessage. And read it in another page.
 By this method you can send successfull or failed messages to the mainpage for example.
 
-Saving Flash Message : 
+<h2>Saving Flash Message : </h2>
 ```go
 //We will just send the fiber.context and the message we want to show.
 session.SetFlash(c, "Loged out Successfully")
 ```
 
-Reading Flash Message :
+<h2>Reading Flash Message :</h2>
 ```go
 //We will take the message which inside the cookie. And you can do whatever you want with it. I will send to the frontend. And i will handle there. 
 alert := session.GetFlash(c)
