@@ -4,13 +4,13 @@ Let's start with example:
 
 Login :
 
-//Make your login controlls here. Control if e-mail and password is correct.
+<!-- Make your login controls here. Check if e-mail and password are correct. -->
 
-//Created new session client.
-session := session.New()  
-//secretKey is can be any string. It is used to make jwt token is understandable by only your server. 
-//Send fiber.context, issuer as string and secretKey. Issuer is the data that we want to hide inside JWT token. It is user ID in this example.
-err := session.Set(c, user.ID, secretKey)
+<!-- Created new session client. -->
+<span style="color: #569cd6;">session</span> := <span style="color: #9cdcfe;">session</span>.<span style="color: #dcdcaa;">New</span>()<br>
+<!-- secretKey can be any string. It is used to make the JWT token understandable only by your server. -->
+<!-- Send fiber.context, issuer as a string, and secretKey. Issuer is the data that we want to hide inside JWT token. It is the user ID in this example. -->
+<span style="color: #9cdcfe;">err</span> := <span style="color: #dcdcaa;">session.Set</span>(c, <span style="color: #ce9178;">user.ID</span>, <span style="color: #ce9178;">secretKey</span>)
 
 
 Now our user is logged in. Only you should do is taking auth cookie in every request and controll if it is valid. Our library will do this for you. 
