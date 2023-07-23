@@ -27,6 +27,20 @@ if err != nil {
 //The issuer string is id of the user that client claims to be. So, you can consider this is the user with that id, and do your staff. 
 ```
 
+```html
+<div style="background-color: black; color: white; padding: 10px;">
+  <pre><code class="language-go">
+	session := session.New()
+	issuerString, err := session.Get(c, secretKey)
+	if err != nil {
+	  return 0, err
+	}
+	
+	//The issuer string is id of the user that client claims to be. So, you can consider this is the user with that id, and do your staff. 
+  </code></pre>
+</div>
+```
+
 Logout :
 
 logging out is also so easy. 
