@@ -2,6 +2,11 @@
 An easy and useful cookie based authentication library for golang fiber framework. It uses JWT tokens to start a session. You can set the lifetime of token.
 Let's start with example: 
 
+To get the library into your project, use :
+```go
+go get "github.com/ogznglr/session"
+```
+
 <h2>Login :</h2>
 
 ```go
