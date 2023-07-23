@@ -4,13 +4,7 @@ Let's start with example:
 
 Login :
 
-<!-- Make your login controls here. Check if e-mail and password are correct. -->
-
-<!-- Created new session client. -->
-<span style="color: #569cd6;">session</span> := <span style="color: #9cdcfe;">session</span>.<span style="color: #dcdcaa;">New</span>()<br>
-<!-- secretKey can be any string. It is used to make the JWT token understandable only by your server. -->
-<!-- Send fiber.context, issuer as a string, and secretKey. Issuer is the data that we want to hide inside JWT token. It is the user ID in this example. -->
-<span style="color: #9cdcfe;">err</span> := <span style="color: #dcdcaa;">session.Set</span>(c, <span style="color: #ce9178;">user.ID</span>, <span style="color: #ce9178;">secretKey</span>)
+<div style="color: rgb(204, 204, 204); background-color: rgb(31, 31, 31); font-family: Consolas, &quot;Courier New&quot;, monospace; font-size: 14px; line-height: 19px; white-space: pre;"><div><span style="color: #6a9955;">//Make your login controlls here. Control if e-mail and password is correct.</span></div><br><div><span style="color: #6a9955;">//Created new session client.</span></div><div><span style="color: #9cdcfe;">session</span> <span style="color: #d4d4d4;">:=</span> session.<span style="color: #dcdcaa;">New</span>() &nbsp;</div><div><span style="color: #6a9955;">//secretKey is can be any string. It is used to make jwt token is understandable by only your server. </span></div><div><span style="color: #6a9955;">//Send fiber.context, issuer as string and secretKey. Issuer is the data that we want to hide inside JWT token. It is user ID in this example.</span></div><div><span style="color: #9cdcfe;">err</span> <span style="color: #d4d4d4;">:=</span> session.<span style="color: #dcdcaa;">Set</span>(c, user.ID, secretKey)</div></div>
 
 
 Now our user is logged in. Only you should do is taking auth cookie in every request and controll if it is valid. Our library will do this for you. 
