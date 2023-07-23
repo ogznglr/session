@@ -17,6 +17,7 @@ Now our user is logged in. Only you should do is taking auth cookie in every req
 
 
 <h2>Checking user validation :</h2>
+
 ```go
 session := session.New()
 issuerString, err := session.Get(c, secretKey)
@@ -29,7 +30,7 @@ if err != nil {
 
 <h2>Logout :</h2>
 
-logging out is also so easy. 
+Logging out is also so easy. 
 ```go
 s := session.New()
 s.Delete(c)
@@ -41,12 +42,14 @@ Flash messages are used for transfering message from a page to another page. We 
 By this method you can send successfull or failed messages to the mainpage for example.
 
 <h2>Saving Flash Message : </h2>
+
 ```go
 //We will just send the fiber.context and the message we want to show.
 session.SetFlash(c, "Loged out Successfully")
 ```
 
 <h2>Reading Flash Message :</h2>
+
 ```go
 //We will take the message which inside the cookie. And you can do whatever you want with it. I will send to the frontend. And i will handle there. 
 alert := session.GetFlash(c)
