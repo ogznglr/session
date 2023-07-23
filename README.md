@@ -1,4 +1,4 @@
-# session
+# CookieAuth - Simplified Cookie-Based Authentication for Golang Fiber Framework
 An easy and useful cookie based authentication library for golang fiber framework. It uses JWT tokens to start a session. You can set the lifetime of token.
 Let's start with example: 
 
